@@ -110,7 +110,7 @@ class Car {
     });
     return points;
   }
-  draw(ctx, color) {
+  draw(ctx, color,drawSensor) {
     if (this.damaged) {
       ctx.fillStyle = "gray";
     } else {
@@ -122,7 +122,7 @@ class Car {
       ctx.lineTo(this.polygon[i].x, this.polygon[i].y);
     }
     ctx.fill();
-    if (this.sensor) {
+    if (this.sensor && drawSensor) {
       this.sensor.draw(ctx);
     }
   }
